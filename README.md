@@ -1,0 +1,1 @@
+# Adaptive-Variational-Quantum-Circuits-for-Resource-Efficient-Hybrid-Learning-in-NISQ-Environments
