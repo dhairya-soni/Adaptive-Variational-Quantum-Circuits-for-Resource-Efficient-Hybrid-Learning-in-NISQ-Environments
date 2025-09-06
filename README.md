@@ -45,3 +45,90 @@ adaptive-vqc/
 ├── README.md                    # Documentation
 └── LICENSE
 ```
+
+
+##Implementation Steps
+
+Phase 1: Core Prototype
+
+Implement a fixed-depth VQC in core/vqc_fixed.py
+
+Train on Iris/MNIST (binary) using training/trainer.py
+
+Add a basic adaptive controller that adds layers if loss plateaus
+
+Save training logs (CSV) and accuracy plots
+
+Phase 2: Adaptive Strategy Suite
+
+Extend adaptivity with:
+
+Gradient-based pruning
+
+Resource budget limits (max gates/qubits)
+
+Add JSON/YAML configs for flexible experiments
+
+Create plots: accuracy vs depth, gate usage vs time
+
+Phase 3: NISQ Simulation & Noise
+
+Add Qiskit Aer noise models (depolarizing, amplitude damping, phase damping)
+
+Run both adaptive & fixed circuits under noise
+
+(Optional) Test on IBM Q backend if API access is available
+
+Build a CLI dashboard to switch datasets/circuits easily
+
+Phase 4: Benchmarking & Final Polish
+
+Run benchmarks across all configs (4–5 variants)
+
+Generate reports with plots: resource–accuracy trade-offs
+
+Clean up repo:
+
+README.md with usage examples
+
+Demo notebook (demo_mnist.ipynb)
+
+Experiment logs in /results/
+
+(Optional) Export a short write-up in /paper/
+
+##Deliverables in GitHub
+
+Modular code (core, training, evaluation)
+
+Config-driven experiment setup
+
+Logs + CSV files for reproducibility
+
+Visualizations of accuracy, depth, and resource usage
+
+Noise-aware simulation results
+
+A user-friendly README with examples
+
+
+
+##Outcome
+By the end, the GitHub repo will:
+1)Show how adaptive VQCs balance performance and resource efficiency
+2)Provide reusable training pipelines for other quantum or classical models
+3)Demonstrate results through plots and benchmarks
+4)Be structured well enough for future extensions (new datasets, new adaptive strategies, or even non-quantum AI models)
+
+
+
+
+
+
+
+
+
+
+
+
+
