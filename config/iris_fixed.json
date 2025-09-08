@@ -1,0 +1,19 @@
+{
+  "experiment_name": "iris_fixed",
+  "dataset": "iris",
+  "circuit_type": "fixed",
+  "n_qubits": 2,
+  "n_layers": 3,
+  "entanglement_pattern": "linear",
+  "rotation_gates": ["ry", "rz"],
+  "training": {
+    "epochs": 20,
+    "batch_size": 16,
+    "optimizer": "COBYLA",
+    "learning_rate": 0.1
+  },
+  "noise": {
+    "enabled": false
+  },
+  "output_dir": "results/iris_fixed"
+}
