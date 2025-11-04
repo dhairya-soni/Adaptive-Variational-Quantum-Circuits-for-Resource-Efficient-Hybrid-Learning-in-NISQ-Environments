@@ -46,6 +46,53 @@ adaptive-vqc/
 └── LICENSE
 ```
 
+#  **How to Run the Experiments**
+
+---
+
+##  **A. Run Fixed VQC**
+
+> ###  Command
+> ```bash
+> python scripts/train.py --config config/iris_fixed.json --verbose
+> ```
+>
+> ### 📋 Description
+> - Loads dataset and configuration.  
+> - Trains a static VQC.  
+> - Saves metrics and plots to `results/test_run/`.
+
+---
+
+##  **B. Run Adaptive VQC**
+
+> ###  Command
+> ```bash
+> python scripts/train_adaptive.py --config config/iris_adaptive.json --verbose
+> ```
+>
+> ###  Description
+> - Uses the same dataset and hyperparameters.  
+> - Dynamically modifies the circuit structure based on performance plateaus.  
+> - Saves results to `results/adaptive_run/`.
+
+---
+
+##  **C. Compare Both Experiments**
+
+> ### 💻 Command
+> ```bash
+> python scripts/compare_results.py \
+> --adaptive results/adaptive_run/results.json \
+> --fixed results/test_run/results.json
+> ```
+>
+> ###  Generates
+> - `comparison_summary.json` — summarized metrics (accuracy, loss, layers, parameters).  
+> - `comparison_plot.png` — visual side-by-side bar chart.
+
+---
+
 
 ##Implementation Steps
 
