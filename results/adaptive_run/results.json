@@ -1,0 +1,50 @@
+{
+  "initial_circuit": {
+    "layers": 1,
+    "parameters": 4
+  },
+  "final_circuit": {
+    "layers": 1,
+    "parameters": 4,
+    "active_layers": [
+      0
+    ]
+  },
+  "final_train_accuracy": 0.6,
+  "final_test_accuracy": 0.5333333333333333,
+  "final_loss": 0.279115322983613,
+  "total_adaptations": 0,
+  "adaptation_history": [],
+  "config": {
+    "experiment_name": "iris_adaptive",
+    "description": "Adaptive VQC that modifies structure during training",
+    "dataset": "iris",
+    "circuit_type": "adaptive",
+    "circuit": {
+      "n_qubits": 2,
+      "initial_depth": 1,
+      "entanglement_pattern": "linear",
+      "rotation_gates": [
+        "ry"
+      ],
+      "adaptation": {
+        "strategy": "loss_plateau",
+        "patience": 10,
+        "threshold": 0.01,
+        "max_layers": 6,
+        "max_gates": 200,
+        "adaptation_frequency": 10
+      }
+    },
+    "training": {
+      "epochs": 30,
+      "batch_size": 16,
+      "optimizer": "COBYLA",
+      "learning_rate": 0.1
+    },
+    "noise": {
+      "enabled": false
+    },
+    "output_dir": "results/iris_adaptive"
+  }
+}
