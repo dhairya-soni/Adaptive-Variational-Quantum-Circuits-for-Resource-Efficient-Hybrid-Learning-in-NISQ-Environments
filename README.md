@@ -57,7 +57,7 @@ adaptive-vqc/
 > python scripts/train.py --config config/iris_fixed.json --verbose
 > ```
 >
-> ### 📋 Description
+> ###  Description
 > - Loads dataset and configuration.  
 > - Trains a static VQC.  
 > - Saves metrics and plots to `results/test_run/`.
