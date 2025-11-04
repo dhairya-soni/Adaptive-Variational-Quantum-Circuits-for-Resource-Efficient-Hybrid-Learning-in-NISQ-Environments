@@ -1,27 +1,34 @@
 {
   "initial_circuit": {
     "layers": 1,
-    "parameters": 4
+    "parameters": 54
   },
   "final_circuit": {
-    "layers": 1,
-    "parameters": 4,
+    "layers": 2,
+    "parameters": 81,
     "active_layers": [
-      0
+      0,
+      1
     ]
   },
-  "final_train_accuracy": 0.6,
-  "final_test_accuracy": 0.5333333333333333,
-  "final_loss": 0.279115322983613,
-  "total_adaptations": 0,
-  "adaptation_history": [],
+  "final_train_accuracy": 0.5,
+  "final_test_accuracy": 0.5666666666666667,
+  "final_loss": 0.34476802372257664,
+  "total_adaptations": 1,
+  "adaptation_history": [
+    {
+      "epoch": 30,
+      "type": "add_layer",
+      "new_depth": 2
+    }
+  ],
   "config": {
     "experiment_name": "iris_adaptive",
     "description": "Adaptive VQC that modifies structure during training",
     "dataset": "iris",
     "circuit_type": "adaptive",
     "circuit": {
-      "n_qubits": 2,
+      "n_qubits": 27,
       "initial_depth": 1,
       "entanglement_pattern": "linear",
       "rotation_gates": [

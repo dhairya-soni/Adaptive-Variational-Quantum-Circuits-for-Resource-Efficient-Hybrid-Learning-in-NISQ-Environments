@@ -2,7 +2,7 @@
   "experiment_name": "iris_fixed",
   "dataset": "iris",
   "circuit_type": "fixed",
-  "n_qubits": 2,
+  "n_qubits": 8,
   
   "n_layers": 3,
   "entanglement_pattern": "linear",

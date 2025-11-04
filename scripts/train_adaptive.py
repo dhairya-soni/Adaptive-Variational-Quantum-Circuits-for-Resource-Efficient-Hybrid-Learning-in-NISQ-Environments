@@ -339,6 +339,28 @@ def main():
         
         # Load dataset
         X_train, X_test, y_train, y_test = load_dataset(config)
+
+ # ============================================================
+# Feature expansion patch (so we can use more qubits than features)
+# ============================================================
+        
+
+        def expand_features(X, n_qubits):
+            """Repeat features until they fill all qubits."""
+            d = X.shape[1]
+            if d == n_qubits:
+                return X
+            reps = int(np.ceil(n_qubits / d))
+            X_expanded = np.tile(X, reps)[:, :n_qubits]
+            return X_expanded
+
+        n_qubits = config.get("circuit", config).get("n_qubits", 2)
+        X_train = expand_features(X_train, n_qubits)
+        X_test  = expand_features(X_test, n_qubits)
+
+
+
+
         
         # Train with adaptation
         epochs = config.get('training', {}).get('epochs', 30)

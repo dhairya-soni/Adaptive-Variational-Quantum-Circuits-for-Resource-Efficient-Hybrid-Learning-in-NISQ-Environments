@@ -93,6 +93,8 @@ def load_dataset(config):
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
 
+
+
 def create_circuit(config):
     """Create FIXED VQC only."""
     circuit_config = config.get('circuit', config)  # Handle both formats
@@ -316,6 +318,32 @@ def main():
         
         # Load dataset
         X_train, X_test, y_train, y_test = load_dataset(config)
+
+        # ============================================================
+# Feature expansion patch (so we can use more qubits than features)
+# ============================================================
+# ============================================================
+# Feature expansion patch (so we can use more qubits than features)
+# ============================================================
+
+        
+
+        def expand_features(X, n_qubits):
+            """Repeat features until they fill all qubits."""
+            d = X.shape[1]
+            if d == n_qubits:
+                return X
+            reps = int(np.ceil(n_qubits / d))
+            X_expanded = np.tile(X, reps)[:, :n_qubits]
+            return X_expanded
+
+        # Get n_qubits from config (supports both top-level and nested)
+        n_qubits = config.get("circuit", config).get("n_qubits", 2)
+        X_train = expand_features(X_train, n_qubits)
+        X_test  = expand_features(X_test, n_qubits)
+
+
+
         
         # Train model
         history, final_params = simple_training_loop(

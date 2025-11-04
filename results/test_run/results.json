@@ -1,21 +1,21 @@
 {
-  "final_train_accuracy": 0.5285714285714286,
-  "final_test_accuracy": 0.4666666666666667,
-  "final_loss": 0.30239055635480117,
+  "final_train_accuracy": 0.4714285714285714,
+  "final_test_accuracy": 0.6,
+  "final_loss": 0.3652682769239998,
   "total_epochs": 20,
   "circuit_info": {
-    "n_qubits": 2,
+    "n_qubits": 8,
     "n_layers": 3,
-    "n_parameters": 8,
+    "n_parameters": 32,
     "entanglement_pattern": "linear",
     "rotation_gates": [
       "ry"
     ],
-    "circuit_depth": 7,
+    "circuit_depth": 14,
     "gate_counts": {
-      "ry": 8,
-      "cx": 2,
-      "measure": 2,
+      "ry": 32,
+      "cx": 14,
+      "measure": 8,
       "barrier": 1
     }
   },
@@ -23,7 +23,7 @@
     "experiment_name": "iris_fixed",
     "dataset": "iris",
     "circuit_type": "fixed",
-    "n_qubits": 2,
+    "n_qubits": 8,
     "n_layers": 3,
     "entanglement_pattern": "linear",
     "rotation_gates": [

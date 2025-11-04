@@ -4,7 +4,7 @@
   "dataset": "iris",
   "circuit_type": "adaptive",
   "circuit": {
-    "n_qubits": 2,
+    "n_qubits": 27,
     "initial_depth": 1,
     "entanglement_pattern": "linear",
     "rotation_gates": ["ry"],
