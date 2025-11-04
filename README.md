@@ -80,7 +80,7 @@ adaptive-vqc/
 
 ##  **C. Compare Both Experiments**
 
-> ### 💻 Command
+> ###  Command
 > ```bash
 > python scripts/compare_results.py \
 > --adaptive results/adaptive_run/results.json \
